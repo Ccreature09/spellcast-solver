@@ -24,3 +24,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Global dropdown styling to ensure proper contrast */
+select.bg-gray-800 {
+  background-color: #1f2937 !important; /* gray-800 */
+  color: white !important;
+}
+
+select.bg-gray-800 option {
+  background-color: #1f2937 !important; /* gray-800 */
+  color: white !important;
+}
+
+/* Additional browser-specific fixes */
+select.bg-gray-800:focus {
+  background-color: #1f2937 !important;
+  color: white !important;
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select.bg-gray-800 {
+    background-color: #1f2937 !important;
+    color: white !important;
+  }
+  
+  select.bg-gray-800 option {
+    background-color: #1f2937 !important;
+    color: white !important;
+  }
+}
+
+/* Firefox specific dropdown styling */
+@-moz-document url-prefix() {
+  select.bg-gray-800 {
+    background-color: #1f2937 !important;
+    color: white !important;
+  }
+  
+  select.bg-gray-800 option {
+    background-color: #1f2937 !important;
+    color: white !important;
+  }
+}
