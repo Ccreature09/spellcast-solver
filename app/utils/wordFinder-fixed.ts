@@ -114,8 +114,8 @@ function calculateScore(word: string, path: Position[], grid: SpellcastGrid, swa
 }
 
 function calculateGemCost(swapCount: number): number {
-  // Each swap costs 5 gems (as shown in UI: "5 each")
-  return swapCount * 5;
+  // Each swap costs 3 gems (corrected from 5)
+  return swapCount * 3;
 }
 
 function isValidPosition(row: number, col: number, grid: SpellcastGrid, visited: boolean[][]): boolean {
@@ -157,9 +157,10 @@ function findWordsFromPosition(
   const lettersToTry: Array<{letter: string, isSwap: boolean, swapInfo?: SwapInfo}> = [
     { letter: originalLetter, isSwap: false }
   ];
-    // Add swap options if swaps are enabled and we have gems/swaps available
+  
+  // Add swap options if swaps are enabled and we have gems/swaps available
   if (settings.allowSwaps && currentSwaps.length < settings.maxSwaps) {
-    const gemsNeeded = (currentSwaps.length + 1) * 5; // 5 gems per swap
+    const gemsNeeded = (currentSwaps.length + 1) * 3;
     if (gemsNeeded <= settings.availableGems) {
       // Check if this position already has a swap
       const existingSwap = currentSwaps.find(s => 
